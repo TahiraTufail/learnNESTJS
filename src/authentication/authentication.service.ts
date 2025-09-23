@@ -28,7 +28,7 @@ export class AuthenticationService {
     return this.userData;
   }
   //partial updation:patch full updation put..
-  async updateUser(
+  updateUser(
     id: number,
     userDTO: { name: string; email: string },
   ): SignUpDTO | { message: string } {
