@@ -24,10 +24,9 @@ export class AuthenticationController {
 
   //PUT - Replace a user
     @Put(':id')
-    updateUser(@Param('id') id: string, @Body() updateUserDto: { name: string; email: string }) {
-        return this.authService.updateUser(Number(id), updateUserDto);
+    updateUser(@Param('id') id: string, @Body() updateUserDto: { name: string; email: string; password:string }) {
+        return this.authService.updateUser(Number(id),updateUserDto );
     }
-
     //PATCH - Partially Update a User
     @Patch(':id')
     partiallyUpdateUser(@Param('id') id: string, @Body() updateUserDto: Partial<SignUpDTO>) {
@@ -38,6 +37,7 @@ export class AuthenticationController {
     @Delete(':id')
     deleteUser(@Param('id') id: string) {
         return this.authService.deleteUser(Number(id));}
+        
 }
 
 

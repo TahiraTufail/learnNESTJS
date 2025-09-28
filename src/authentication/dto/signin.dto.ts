@@ -8,4 +8,5 @@ export class logInDTO {
   @IsString()
   @IsNotEmpty()
   pass: string;
+
 }

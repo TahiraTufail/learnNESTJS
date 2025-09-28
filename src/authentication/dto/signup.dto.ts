@@ -1,6 +1,10 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class SignUpDTO {
+
+  @IsOptional()
+  @IsNumber()
+  id?: number
 
   @IsString()
   @IsNotEmpty()
@@ -14,3 +18,4 @@ export class SignUpDTO {
   @IsNotEmpty()
   password: string;
 }
+ 
